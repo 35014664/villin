@@ -279,12 +279,12 @@ function typing(cb){
 function buildFaq(){
   var bar=$("faqbar");if(!bar)return;
   var track=bar.querySelector(".faqtrack");
-  ["faq_incidencias","faq_equipos","faq_solicitud_equipo","horario","faq_horario_orientacion"].forEach(function(id){var it=byId(id);if(!it)return;var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=it.t;b.addEventListener("click",function(){ask(it.t,id);});track.appendChild(b);});
+  [["horario","Secretaría"],["faq_horario_orientacion","Orientación"],["tramites","Trámites y solicitudes"],["ciclos","Ciclo formativo"],["erasmus","Erasmus"],["faq_solicitud_equipo","Solicitud de equipos informáticos"],["faq_incidencias","Incidencia"]].forEach(function(p){var id=p[0];var it=byId(id);if(!it)return;var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=p[1];b.addEventListener("click",function(){ask(p[1],id);});track.appendChild(b);});
   bar.querySelector(".prev").addEventListener("click",function(){track.scrollBy({left:-160,behavior:"smooth"});});
   bar.querySelector(".next").addEventListener("click",function(){track.scrollBy({left:160,behavior:"smooth"});});
 }
 function welcome(){
-  addBot('<p>¡Hola! Soy <b>Villín</b>, el asistente virtual del <b>CIFP Villa de Agüimes</b>. Resuelvo dudas con la información de la web del centro. ¿Sobre qué quieres saber?</p>',["ciclos","tramites","horario","fct","erasmus","contacto"]);
+  addBot('<p>¡Hola! Soy <b>Villín</b>, el asistente virtual del <b>CIFP Villa de Agüimes</b>. Resuelvo dudas con la información de la web del centro. ¿Sobre qué quieres saber?</p>',[]);
 
 }
 function ask(label,forcedId){
