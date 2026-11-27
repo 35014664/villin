@@ -1,0 +1,2 @@
+# Un nombre de archivo por línea. Las líneas que empiezan por # no se leen.
+restablecer-contrasena.md
